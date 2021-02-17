@@ -1,0 +1,37 @@
+﻿<Window x:Class="WpfApp5.IssueBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp5"
+        mc:Ignorable="d"
+        Title="IssueBook" Height="450" Width="800"
+
+        ResizeMode="NoResize"
+        Topmost="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded"
+        >
+    <Grid>
+        <Grid Height="69" Margin="0,0,0,381" VerticalAlignment="Bottom" Background="#FFB8B8B8" HorizontalAlignment="Left" Width="800" >
+            <TextBlock HorizontalAlignment="Left" Margin="240,6,0,0" TextWrapping="Wrap" Text="Wypożycz książkę" VerticalAlignment="Top" FontSize="40"/>
+            <TextBox x:Name="TextName" Height="23" Margin="568,117,57,-71" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True"/>
+            <TextBlock HorizontalAlignment="Left" Margin="341,112,0,-71" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top" Height="28" Width="54" FontSize="23"/>
+            <TextBox x:Name="TextSurname" Height="23" Margin="568,158,57,-112" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True"/>
+            <TextBox x:Name="TextEmail" Height="23" Margin="568,201,57,-155" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True"/>
+            <TextBox x:Name="TextContact" Height="23" Margin="568,250,57,-204" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True"/>
+            <TextBlock HorizontalAlignment="Left" Margin="341,159,0,-116" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" Height="26" Width="124" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Left" Margin="341,202,0,-161" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Height="28" Width="54" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Left" Margin="341,243,0,-204" TextWrapping="Wrap" Text="Numer Telefonu" Width="168" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Left" Margin="107,155,0,-116" TextWrapping="Wrap" Width="47" FontSize="20"><Run Text="Pesel"/><LineBreak/><Run/></TextBlock>
+            <TextBox x:Name="TextPesel" Height="23" Margin="44,201,581,-155" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextPesel_TextChanged"/>
+            <Button x:Name="AddButton" Content="Wypożycz" HorizontalAlignment="Left" Margin="180,385,0,-359" VerticalAlignment="Top" Width="128" Height="43" Click="ButtonAdd"/>
+            <Button x:Name="Cancel" Content="Anuluj" HorizontalAlignment="Left" Margin="474,385,0,-359" VerticalAlignment="Top" Width="128" Height="43" Click="Cancel_Click" />
+            <TextBlock HorizontalAlignment="Left" Margin="341,294,0,-255" TextWrapping="Wrap" Text="Nazwa Książki" Width="168" FontSize="20"/>
+        </Grid>
+        <ComboBox x:Name="Books" HorizontalAlignment="Left" Margin="569,300,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Wyszukaj użytkownika" HorizontalAlignment="Left" Margin="43,241,0,0" VerticalAlignment="Top" Width="177" FontSize="15" Height="45" Click="Button_Click"/>
+        <DatePicker x:Name="Date" HorizontalAlignment="Left" Margin="569,340,0,0" VerticalAlignment="Top" Width="175"/>
+
+    </Grid>
+</Window>

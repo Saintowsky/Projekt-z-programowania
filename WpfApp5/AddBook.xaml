@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfApp5.AddBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp5"
+        mc:Ignorable="d"
+        Title="AddBook" Height="450" Width="800" 
+        ResizeMode="NoResize"
+        Topmost="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+    <Grid Height="69" Margin="0,0,0,381" VerticalAlignment="Bottom" Background="#FFB8B8B8" HorizontalAlignment="Left" Width="800">
+        <TextBlock HorizontalAlignment="Left" Margin="279,6,0,0" TextWrapping="Wrap" Text="Dodaj Książkę" VerticalAlignment="Top" FontSize="40"/>
+        <TextBox x:Name="BookName" Height="23" Margin="355,157,198,-111" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="BookAuthor" Height="23" Margin="355,200,198,-154" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="BookPublisher" Height="23" Margin="355,249,198,-203" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="140,158,0,-115" TextWrapping="Wrap" Text="Nazwa książki" VerticalAlignment="Top" Height="26" Width="124" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="140,201,0,-160" TextWrapping="Wrap" Text="Autor" VerticalAlignment="Top" Height="28" Width="54" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="140,242,0,-203" TextWrapping="Wrap" Text="Wydawnictwo" Width="128" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="140,288,0,-249" TextWrapping="Wrap" Width="128" FontSize="20"><Run Text="Ilość"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="BookAmmount" Height="23" Margin="355,295,198,-249" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="AddButton" Content="Dodaj" HorizontalAlignment="Left" Margin="180,385,0,-359" VerticalAlignment="Top" Width="128" Height="43" Click="ButtonAdd"/>
+        <Button x:Name="Cancel" Content="Anuluj" HorizontalAlignment="Left" Margin="474,385,0,-359" VerticalAlignment="Top" Width="128" Height="43" Click="ButtonCancel"/>
+    </Grid>
+</Window>
