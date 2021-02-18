@@ -34,7 +34,7 @@ namespace WpfApp5
             string userName = txtName.Text;
             string userSurname = txtSurname.Text;
             string userEmail = txtEmail.Text;
-            string userPassword = txtPassword.Text;
+            string userPassword = txtPassword.Password.ToString();
 
             if (userName.Equals(""))
             {
@@ -91,6 +91,17 @@ namespace WpfApp5
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Czy na pewno chcesz anulować rejestrację?", "Potwierdzenie", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
+            AdminWindow aw = new AdminWindow();
+            aw.Show();
+
         }
     }
 }

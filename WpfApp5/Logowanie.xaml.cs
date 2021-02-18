@@ -33,7 +33,7 @@ namespace WpfApp5
         private void btnSignup_Click(object sender, RoutedEventArgs e)
         {
             string email = txtEmailLogin.Text;
-            string password = txtPasswordLogin.Text;
+            string password = txtPasswordLogin.Password.ToString();
 
             if (email.Equals(""))
             {

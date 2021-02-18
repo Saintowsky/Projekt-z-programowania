@@ -22,8 +22,8 @@
         <Label Content="Email:" HorizontalAlignment="Left" Margin="69,182,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="29" Margin="153,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" FontSize="16" Grid.ColumnSpan="2"/>
         <Label Content="Hasło:" HorizontalAlignment="Left" Margin="67,216,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="29" Margin="153,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271" FontSize="16" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnSignup_Copy" Content="Gotowe!" HorizontalAlignment="Left" Margin="197,297,0,0" VerticalAlignment="Top" Width="121" Click="btnSignup_Click" Height="34" Grid.ColumnSpan="2"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="29" Margin="153,224,0,0" VerticalAlignment="Top" Width="271" FontSize="16" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnSignup_Copy" Content="Gotowe!" HorizontalAlignment="Left" Margin="67,300,0,0" VerticalAlignment="Top" Width="121" Click="btnSignup_Click" Height="34"/>
         <Label Content="Nazwisko:" HorizontalAlignment="Left" Margin="24,146,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
         <Button x:Name="ExitButton" Content="" Click="ExitButton_Click" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" Width="32" Height="32"
             BorderThickness="0" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.Column="1">
@@ -37,6 +37,7 @@
                 <ImageBrush ImageSource="minimize-window.png"/>
             </Button.Background>
         </Button>
+        <Button x:Name="BtnBack" Content="Powrót" HorizontalAlignment="Left" Margin="74,300,0,0" VerticalAlignment="Top" Width="121" Click="BtnBack_Click" Height="34" Grid.Column="1"/>
 
 
     </Grid>
