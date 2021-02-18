@@ -43,31 +43,41 @@ namespace WpfApp5
             {
                 MessageBox.Show("Proszę wpisać hasło!");
             }
-            if (email.Equals("admin") && password.Equals("admin"))
-            {
-                this.Hide();
-                AdminWindow admin = new AdminWindow();
-                admin.Show();
-            }
             else
             {
-                string query = "Select * from Workers Where Email= '" + email + "' AND Password = '" + password + "'";
+                string query = "Select * from Workers Where Email= '" + email + "' AND Password = '" + password + "' AND IsAdmin = 1";
                 objDBAccess.readDatathroughAdapter(query, dtUsers);
 
                 if (dtUsers.Rows.Count == 1)
                 {
-                    MessageBox.Show("Zostałeś zalogowany!");
+                    MessageBox.Show("Zostałeś zalogowany jako administrator!");
                     objDBAccess.closeConn();
 
                     this.Hide();
-                    Home home = new Home();
-                    home.Show();
+                    AdminWindow adminHome = new AdminWindow();
+                    adminHome.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Nie znaleziono konta!");
+                    string query2 = "Select * from Workers Where Email= '" + email + "' AND Password = '" + password + "'";
+                    objDBAccess.readDatathroughAdapter(query2, dtUsers);
+
+                    if (dtUsers.Rows.Count == 1)
+                    {
+                        MessageBox.Show("Zostałeś zalogowany!");
+                        objDBAccess.closeConn();
+
+                        this.Hide();
+                        Home home = new Home();
+                        home.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nie znaleziono konta!");
+                    }
                 }
             }
+           
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
