@@ -66,7 +66,6 @@ namespace WpfApp5
                 else
                 {
                     MessageBox.Show("Nie znaleziono konta!");
-                    MessageBox.Show(Convert.ToString(dtUsers.Rows.Count));
                 }
             }
         }

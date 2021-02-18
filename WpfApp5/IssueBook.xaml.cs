@@ -59,7 +59,7 @@ namespace WpfApp5
             con.Close();
 
         }
-        int count;
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (TextPesel.Text != "")
@@ -95,6 +95,19 @@ namespace WpfApp5
         {
             if (TextName.Text != "")
             {
+
+                String PESEL2 = TextPesel.Text;
+                SqlCommand cmd2 = new SqlCommand();
+                cmd2.Connection = con;
+
+                cmd2.CommandText = "select ID from Users where PESEL ='" + PESEL2 + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(cmd2);
+                DataSet DS = new DataSet();
+                sda.Fill(DS);
+
+                Int64 UserID= Int64.Parse(DS.Tables[0].Rows[0][0].ToString());
+                
+
                 if (Books.SelectedIndex != -1)
                 {
                     String PESEL = TextPesel.Text;
@@ -109,15 +122,16 @@ namespace WpfApp5
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = con;
                     con.Open();
-                    cmd.CommandText = "insert into Operacje (PESEL, Name, Surname, Email, Contact, Bookname, Issuedate) values ('" + PESEL + "', '" + Name + "', '"+Surname+"', '"+Email+"', '"+Contact+"', '"+BookName+"', '"+ BookIssueDate + "')";
+                    cmd.CommandText = "insert into Operacje (PESEL, UserID, Name, Surname, Email, Contact, Bookname, Issuedate) values ('" + PESEL + "', '"+UserID+"', '" + Name + "', '"+Surname+"', '"+Email+"', '"+Contact+"', '"+BookName+"', '"+ BookIssueDate + "')";
                     cmd.ExecuteNonQuery();
                     con.Close();
 
                     MessageBox.Show("Pomyślnie wypożyczono ksiażkę!");
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Błąd!. Wybierz książkę! (Maksymalna ilośc wypożyczonych książek mogła zostać przekroczona)");
+                    MessageBox.Show("Błąd!. Wybierz książkę!");
                 }
             }
             else

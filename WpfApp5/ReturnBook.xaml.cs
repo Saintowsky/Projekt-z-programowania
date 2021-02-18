@@ -31,7 +31,10 @@ namespace WpfApp5
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Czy na pewno chcesz anulować akcję?", "Potwierdzenie", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
